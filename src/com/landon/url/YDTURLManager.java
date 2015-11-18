@@ -24,7 +24,10 @@ public class YDTURLManager extends URLManager {
 
 	@Override
 	public String getNextURL() {
-		return HeaderURL + getNextPage();
+		int page = getNextPage();
+		if (page == -1)
+			return null;
+		return HeaderURL + page;
 	}
 
 }

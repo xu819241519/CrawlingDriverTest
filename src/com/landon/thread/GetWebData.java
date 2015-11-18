@@ -31,7 +31,7 @@ public class GetWebData implements Runnable {
 			String content = Jsoup.connect(URL).ignoreContentType(true).execute().body();
 			Entity entity = mParser.getEntity(content, ID);
 			Data.addData(entity);
-			System.out.println(Thread.currentThread().getName() + "已经启动");
+			System.out.println(ID + "已经启动");
 
 		} catch (IOException e) {
 			e.printStackTrace();
