@@ -10,12 +10,12 @@ import com.landon.entity.Entity;
 public interface IParser {
 
 	/**
-	 * 获取总页数
+	 * 获取问题列表
 	 * 
 	 * @param content
-	 * @return 总页数
+	 * @return 问题列表
 	 */
-	public List<String> getPageList(String content);
+	public List<Integer> getQuestionList(String content);
 
 	/**
 	 * 获取数据实体

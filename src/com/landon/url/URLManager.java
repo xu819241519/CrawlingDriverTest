@@ -5,22 +5,35 @@ import java.util.List;
 
 public abstract class URLManager {
 
-	protected List<String> mPage;
+	protected List<Integer> mPage;
 
-	public void setPageList(List<String> page) {
+	protected int CurrentPage = -1;
+
+	/**
+	 * 设置页号
+	 * 
+	 * @param page
+	 */
+	public void setPageList(List<Integer> page) {
 		if (page != null && page.size() > 0) {
 			if (mPage == null) {
-				mPage = new ArrayList<String>();
+				mPage = new ArrayList<Integer>();
 			}
 			mPage.addAll(page);
 		}
 	}
 
-	public String getPage(int index) {
-		if (mPage != null && index < mPage.size())
-			return mPage.get(index);
+	/**
+	 * 获得下一页的页号
+	 * 
+	 * @return
+	 */
+	protected int getNextPage() {
+		CurrentPage++;
+		if (CurrentPage < mPage.size())
+			return mPage.get(CurrentPage);
 		else
-			return null;
+			return -1;
 	}
 
 	/**

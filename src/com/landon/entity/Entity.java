@@ -39,8 +39,10 @@ public abstract class Entity implements Comparable<Entity> {
 		return Options;
 	}
 
-	public void setOptions(List<String> options) {
-		Options = options;
+	public void addOptions(String opt) {
+		if (Options == null)
+			Options = new ArrayList<String>();
+		Options.add(opt);
 	}
 
 	public List<Integer> getAnswerIndex() {

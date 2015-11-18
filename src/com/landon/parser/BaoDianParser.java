@@ -55,18 +55,15 @@ public class BaoDianParser implements IParser {
 		}
 		result.setID(id);
 		result.setTitle(jObject.getString("question"));
-		List<String> options = new ArrayList<String>();
 
 		String[] ops = { "optionA", "optionB", "optionC", "optionD", "optionE", "optionF", "optionG", "optionH" };
 		for (int i = 0; i < ops.length; ++i) {
 			Object value = jObject.get(ops[i]);
 			if (value != null && !value.equals(null))
 				if (value != null && !((String) value).trim().equals("")) {
-					options.add((String) value);
-
+					result.addOptions((String) value);
 				}
 		}
-		result.setOptions(options);
 
 		if (jObject.getInt("mediaType") == 1) {
 			PictureEntity pictureEntity = new PictureEntity();
@@ -89,15 +86,15 @@ public class BaoDianParser implements IParser {
 	}
 
 	@Override
-	public List<String> getPageList(String content) {
-		List<String> result = null;
+	public List<Integer> getQuestionList(String content) {
+		List<Integer> result = null;
 		JSONObject jo = new JSONObject(content);
 		JSONArray jsonArray = jo.getJSONArray("data");
 		if (jsonArray != null && jsonArray.length() != 0) {
-			result = new ArrayList<String>();
+			result = new ArrayList<Integer>();
 		}
 		for (int i = 0; i < jsonArray.length(); ++i) {
-			result.add(Integer.toString(jsonArray.getInt(i)));
+			result.add(jsonArray.getInt(i));
 		}
 		return result;
 	}

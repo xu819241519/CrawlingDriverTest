@@ -12,8 +12,6 @@ public class BaoDianURLManager extends URLManager {
 	private String headerURL = "http://api2.jiakaobaodian.com/api/open/question/question-list.htm?_r=187955896323366094&_config={}&_screenDip=1.25&questionIds=";
 	// url不变的尾部
 	private String tailURL = "&_=";
-	// 当前头部
-	private int currentPage = 0;
 
 	private CourseEntity mCourseEntity;
 
@@ -23,9 +21,9 @@ public class BaoDianURLManager extends URLManager {
 
 	@Override
 	public String getNextURL() {
-		String page = getPage(currentPage++);
+		int page = getNextPage();
 		String result = null;
-		if (page != null) {
+		if (page != -1) {
 			result = headerURL + page + tailURL + System.currentTimeMillis();
 		}
 		return result;
@@ -33,9 +31,9 @@ public class BaoDianURLManager extends URLManager {
 
 	@Override
 	public String getOriginURL() {
-		if(mCourseEntity.getCourseID() == CourseEntity.COURSE_1){
+		if (mCourseEntity.getCourseID() == CourseEntity.COURSE_1) {
 			originURL += "1&_=";
-		} else if(mCourseEntity.getCourseID() == CourseEntity.COURSE_4){
+		} else if (mCourseEntity.getCourseID() == CourseEntity.COURSE_4) {
 			originURL += "3&_=";
 		}
 		return originURL + System.currentTimeMillis();

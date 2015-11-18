@@ -67,8 +67,7 @@ public class CrawlingWeb {
 		try {
 			String url = urlManager.getOriginURL();
 			String result = Jsoup.connect(url).ignoreContentType(true).execute().body();
-			// System.out.println(result);
-			List<String> pageList = parser.getPageList(result);
+			List<Integer> pageList = parser.getQuestionList(result);
 			urlManager.setPageList(pageList);
 			System.out.println("预先获得" + pageList.size() + "个题");
 		} catch (IOException e) {
