@@ -1,12 +1,11 @@
 package com.landon.factory;
 
-
 public abstract class CourseType {
 
 	// 科目一
-	public static int COURSE_1;
+	public static int COURSE_1 = 1;
 	// 科目四
-	public static int COURSE_4;
+	public static int COURSE_4 = 4;
 
 	/**
 	 * 创建类型子类

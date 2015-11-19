@@ -1,6 +1,6 @@
 package com.landon.factory;
 
-import com.landon.parser.IParser;
+import com.landon.parser.Parser;
 import com.landon.url.URLManager;
 
 public abstract class Factory {
@@ -12,10 +12,29 @@ public abstract class Factory {
 		mCourseType = CourseType.createType(type);
 	}
 
+	/**
+	 * 获得课程类型
+	 * 
+	 * @return 课程类型
+	 */
 	protected CourseType getCourseType() {
 		return mCourseType;
 	}
 
+	/**
+	 * 获得课程类型码
+	 * 
+	 * @return 课程类型码
+	 */
+	protected int getCourseTypeCode() {
+		return mCourseType.getTpyeCode();
+	}
+
+	/**
+	 * 设置课程类型
+	 * 
+	 * @param type
+	 */
 	public void setCourseType(int type) {
 		mCourseType = CourseType.createType(type);
 	}
@@ -25,7 +44,7 @@ public abstract class Factory {
 	 * 
 	 * @return 解析器
 	 */
-	public IParser getParser() {
+	public Parser getParser() {
 		return null;
 	}
 

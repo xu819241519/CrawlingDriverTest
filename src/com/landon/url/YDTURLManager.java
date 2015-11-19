@@ -8,15 +8,13 @@ public class YDTURLManager extends URLManager {
 
 	private String HeaderURL = "http://wz.jxedt.com/test/abcd/ajax.asp?r=0.42186994873918593&index=";
 
-	private CourseType mCourseType;
-
 	public YDTURLManager(CourseType type) {
-		mCourseType = type;
+		super(type);
 	}
 
 	@Override
 	public String getOriginURL() {
-		if (mCourseType.getTpyeCode() == CourseType.COURSE_1)
+		if (getCourseTypeCode() == CourseType.COURSE_1)
 			return OriginURL + "c";
 		else
 			return OriginURL + "s";

@@ -5,7 +5,6 @@ import java.util.List;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-
 import com.landon.entity.BaoDianEntity;
 import com.landon.entity.Entity;
 import com.landon.entity.PictureEntity;
@@ -13,12 +12,10 @@ import com.landon.entity.VideoEntity;
 import com.landon.factory.CourseType;
 import com.landon.thread.GetMedia;
 
-public class BaoDianParser implements IParser {
-
-	private CourseType mCourseEntity;
+public class BaoDianParser extends Parser {
 
 	public BaoDianParser(CourseType type) {
-		mCourseEntity = type;
+		super(type);
 	}
 
 	/**

@@ -5,19 +5,19 @@ import java.io.IOException;
 import org.jsoup.Jsoup;
 
 import com.landon.entity.Entity;
-import com.landon.parser.IParser;
+import com.landon.parser.Parser;
 import com.landon.word.Data;
 
 public class GetWebData implements Runnable {
 
 	// 解析器
-	private IParser mParser;
+	private Parser mParser;
 	// 网址
 	private String URL;
 	// 第几个
 	private int ID;
 
-	public GetWebData(IParser parser, String url, int id) {
+	public GetWebData(Parser parser, String url, int id) {
 		mParser = parser;
 		URL = url;
 		ID = id;
@@ -30,7 +30,7 @@ public class GetWebData implements Runnable {
 			String content = Jsoup.connect(URL).ignoreContentType(true).execute().body();
 			Entity entity = mParser.getEntity(content, ID);
 			Data.addData(entity);
-			//System.out.println(ID + "已经启动");
+			// System.out.println(ID + "已经启动");
 
 		} catch (IOException e) {
 			e.printStackTrace();

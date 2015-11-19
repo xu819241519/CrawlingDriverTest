@@ -17,9 +17,14 @@ import com.landon.entity.Entity;
 import com.landon.entity.PictureEntity;
 import com.landon.entity.VideoEntity;
 import com.landon.entity.YDTEntity;
+import com.landon.factory.CourseType;
 import com.landon.thread.GetMedia;
 
-public class YDTParser implements IParser {
+public class YDTParser extends Parser {
+
+	public YDTParser(CourseType type) {
+		super(type);
+	}
 
 	public static Object object = new Object();
 
@@ -71,7 +76,7 @@ public class YDTParser implements IParser {
 			// content = content.replace("\"", "");
 			content = content.replace("\\这个", "向右的");
 
-			//System.out.println(content);
+			// System.out.println(content);
 			JSONObject jsonObject = new JSONObject(content);
 			ydtEntity.setTitle(jsonObject.getString("question"));
 			ydtEntity.setAnalysis(jsonObject.getString("bestanswer"));

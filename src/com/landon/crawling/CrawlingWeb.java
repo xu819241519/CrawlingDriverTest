@@ -8,7 +8,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.jsoup.Jsoup;
 import com.landon.factory.Factory;
-import com.landon.parser.IParser;
+import com.landon.parser.Parser;
 import com.landon.thread.GetWebData;
 import com.landon.url.URLManager;
 import com.landon.word.WriteWord;
@@ -56,7 +56,7 @@ public class CrawlingWeb {
 	 * @param urlManager
 	 * @param parser
 	 */
-	private void initURLManager(URLManager urlManager, IParser parser) {
+	private void initURLManager(URLManager urlManager, Parser parser) {
 		try {
 			String url = urlManager.getOriginURL();
 			String result = Jsoup.connect(url).ignoreContentType(true).execute().body();

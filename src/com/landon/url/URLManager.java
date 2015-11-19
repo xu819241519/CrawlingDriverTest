@@ -3,11 +3,24 @@ package com.landon.url;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.landon.factory.CourseType;
+
 public abstract class URLManager {
 
 	protected List<Integer> mPage;
 
 	protected int CurrentPage = -1;
+
+	// 课程类型
+	protected CourseType mCourseType;
+
+	public URLManager(CourseType type) {
+		mCourseType = type;
+	}
+
+	protected int getCourseTypeCode() {
+		return mCourseType.getTpyeCode();
+	}
 
 	/**
 	 * 设置页号

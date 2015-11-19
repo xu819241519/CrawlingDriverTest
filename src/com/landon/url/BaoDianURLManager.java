@@ -1,6 +1,5 @@
 package com.landon.url;
 
-
 import com.landon.factory.CourseType;
 
 public class BaoDianURLManager extends URLManager {
@@ -12,10 +11,8 @@ public class BaoDianURLManager extends URLManager {
 	// url不变的尾部
 	private String tailURL = "&_=";
 
-	private CourseType mCourseType;
-
 	public BaoDianURLManager(CourseType type) {
-		mCourseType = type;
+		super(type);
 	}
 
 	@Override
@@ -30,9 +27,9 @@ public class BaoDianURLManager extends URLManager {
 
 	@Override
 	public String getOriginURL() {
-		if (mCourseType.getTpyeCode() == CourseType.COURSE_1) {
+		if (getCourseTypeCode() == CourseType.COURSE_1) {
 			originURL += "1&_=";
-		} else if (mCourseType.getTpyeCode() == CourseType.COURSE_4) {
+		} else if (getCourseTypeCode() == CourseType.COURSE_4) {
 			originURL += "3&_=";
 		}
 		return originURL + System.currentTimeMillis();

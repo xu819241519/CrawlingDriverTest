@@ -1,7 +1,7 @@
 package com.landon.factory;
 
 import com.landon.parser.BaoDianParser;
-import com.landon.parser.IParser;
+import com.landon.parser.Parser;
 import com.landon.url.BaoDianURLManager;
 import com.landon.url.URLManager;
 
@@ -12,7 +12,7 @@ public class BaoDianFactory extends Factory {
 	}
 
 	@Override
-	public IParser getParser() {
+	public Parser getParser() {
 		return new BaoDianParser(mCourseType);
 	}
 
