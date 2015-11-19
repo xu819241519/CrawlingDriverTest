@@ -5,12 +5,12 @@ import com.landon.parser.YDTParser;
 import com.landon.url.URLManager;
 import com.landon.url.YDTURLManager;
 
-public class YDTFactory implements IFactory {
+public class YDTFactory extends Factory {
 
 	private CourseType mCourseType;
 
 	public YDTFactory(int courseType) {
-		mCourseType = CourseType.createType(courseType);
+		super(courseType);
 	}
 
 	@Override
@@ -28,7 +28,7 @@ public class YDTFactory implements IFactory {
 		String name = "驾校一点通科目";
 		if (mCourseType.getTpyeCode() == CourseType.COURSE_1) {
 			name += "一";
-		} else if (mCourseType.getTpyeCode() == CourseType.COURSE_4) {
+		} else if (getCourseType().getTpyeCode() == CourseType.COURSE_4) {
 			name += "四";
 		}
 		return name;

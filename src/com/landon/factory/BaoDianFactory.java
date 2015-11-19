@@ -5,16 +5,10 @@ import com.landon.parser.IParser;
 import com.landon.url.BaoDianURLManager;
 import com.landon.url.URLManager;
 
-public class BaoDianFactory implements IFactory {
-
-	private CourseType mCourseType;
+public class BaoDianFactory extends Factory {
 
 	public BaoDianFactory(int courseType) {
-		mCourseType = CourseType.createType(courseType);
-	}
-
-	public void setmCourseEntity(int courseType) {
-		this.mCourseType = CourseType.createType(courseType);
+		super(courseType);
 	}
 
 	@Override
@@ -30,9 +24,9 @@ public class BaoDianFactory implements IFactory {
 	@Override
 	public String getName() {
 		String result = "驾考宝典";
-		if (mCourseType.getTpyeCode() == CourseType.COURSE_1)
+		if (getCourseType().getTpyeCode() == CourseType.COURSE_1)
 			result += "科目一";
-		else if (mCourseType.getTpyeCode() == CourseType.COURSE_4)
+		else if (getCourseType().getTpyeCode() == CourseType.COURSE_4)
 			result += "科目四";
 		return result;
 	}

@@ -1,6 +1,5 @@
 package com.landon.url;
 
-import java.util.List;
 
 import com.landon.factory.CourseType;
 

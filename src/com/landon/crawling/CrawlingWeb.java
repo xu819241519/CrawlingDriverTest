@@ -1,22 +1,16 @@
 package com.landon.crawling;
 
 import java.io.IOException;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.sql.Connection;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
 import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-
-import com.landon.factory.IFactory;
+import com.landon.factory.Factory;
 import com.landon.parser.IParser;
 import com.landon.thread.GetWebData;
 import com.landon.url.URLManager;
-import com.landon.word.Data;
 import com.landon.word.WriteWord;
 
 public class CrawlingWeb {
@@ -28,7 +22,7 @@ public class CrawlingWeb {
 	 *            允许最大的线程数
 	 * @param factory
 	 */
-	public void startCrawling(IFactory factory) {
+	public void startCrawling(Factory factory) {
 		URLManager urlManager = factory.getURLManager();
 		initURLManager(urlManager, factory.getParser());
 

@@ -7,7 +7,6 @@ import org.jsoup.Jsoup;
 import com.landon.entity.Entity;
 import com.landon.parser.IParser;
 import com.landon.word.Data;
-import com.landon.word.WriteWord;
 
 public class GetWebData implements Runnable {
 

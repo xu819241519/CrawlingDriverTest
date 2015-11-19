@@ -2,20 +2,9 @@ package com.landon.parser;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
-import javax.swing.JButton;
-
-import org.apache.log4j.rewrite.RewriteAppender;
-import org.apache.poi.hwpf.model.PICF;
 import org.json.JSONArray;
 import org.json.JSONObject;
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
-import org.omg.CORBA.INTERNAL;
+
 
 import com.landon.entity.BaoDianEntity;
 import com.landon.entity.Entity;

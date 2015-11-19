@@ -12,7 +12,6 @@ import java.util.regex.Pattern;
 import javax.imageio.ImageIO;
 
 import org.json.JSONObject;
-import org.omg.CORBA.OBJ_ADAPTER;
 
 import com.landon.entity.Entity;
 import com.landon.entity.PictureEntity;

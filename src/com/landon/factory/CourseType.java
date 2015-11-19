@@ -1,6 +1,5 @@
 package com.landon.factory;
 
-import org.omg.CORBA.PUBLIC_MEMBER;
 
 public abstract class CourseType {
 

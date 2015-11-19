@@ -2,7 +2,6 @@ package com.landon.parser;
 
 import java.util.List;
 
-import org.jsoup.nodes.Document;
 
 import com.landon.entity.Entity;
 
