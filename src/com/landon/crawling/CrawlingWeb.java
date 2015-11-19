@@ -12,7 +12,6 @@ import java.util.concurrent.TimeUnit;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
-import com.landon.entity.CourseEntity;
 import com.landon.factory.IFactory;
 import com.landon.parser.IParser;
 import com.landon.thread.GetWebData;
@@ -48,7 +47,7 @@ public class CrawlingWeb {
 				if (executorService.awaitTermination(1000, TimeUnit.SECONDS)) {
 					WriteWord writeWord = new WriteWord();
 					writeWord.write2Word(factory.getName());
-					System.out.println("任务已经完成");
+					// System.out.println("任务已经完成");
 				}
 			} catch (InterruptedException e) {
 				e.printStackTrace();
@@ -69,7 +68,7 @@ public class CrawlingWeb {
 			String result = Jsoup.connect(url).ignoreContentType(true).execute().body();
 			List<Integer> pageList = parser.getQuestionList(result);
 			urlManager.setPageList(pageList);
-			System.out.println("预先获得" + pageList.size() + "个题");
+			//System.out.println("预先获得" + pageList.size() + "个题");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

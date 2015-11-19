@@ -72,7 +72,7 @@ public class YDTParser implements IParser {
 			// content = content.replace("\"", "");
 			content = content.replace("\\这个", "向右的");
 
-			System.out.println(content);
+			//System.out.println(content);
 			JSONObject jsonObject = new JSONObject(content);
 			ydtEntity.setTitle(jsonObject.getString("question"));
 			ydtEntity.setAnalysis(jsonObject.getString("bestanswer"));

@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.jsoup.nodes.Document;
 
-import com.landon.entity.CourseEntity;
 import com.landon.entity.Entity;
 
 public interface IParser {

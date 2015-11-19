@@ -1,6 +1,5 @@
 package com.landon.factory;
 
-import com.landon.entity.CourseEntity;
 import com.landon.parser.IParser;
 import com.landon.parser.YDTParser;
 import com.landon.url.URLManager;
@@ -8,10 +7,10 @@ import com.landon.url.YDTURLManager;
 
 public class YDTFactory implements IFactory {
 
-	private CourseEntity mCourseEntity;
+	private CourseType mCourseType;
 
-	public YDTFactory(CourseEntity entity) {
-		mCourseEntity = entity;
+	public YDTFactory(int courseType) {
+		mCourseType = CourseType.createType(courseType);
 	}
 
 	@Override
@@ -21,15 +20,15 @@ public class YDTFactory implements IFactory {
 
 	@Override
 	public URLManager getURLManager() {
-		return new YDTURLManager(mCourseEntity);
+		return new YDTURLManager(mCourseType);
 	}
 
 	@Override
 	public String getName() {
 		String name = "驾校一点通科目";
-		if (mCourseEntity.getCourseID() == CourseEntity.COURSE_1) {
+		if (mCourseType.getTpyeCode() == CourseType.COURSE_1) {
 			name += "一";
-		} else if (mCourseEntity.getCourseID() == CourseEntity.COURSE_4) {
+		} else if (mCourseType.getTpyeCode() == CourseType.COURSE_4) {
 			name += "四";
 		}
 		return name;

@@ -1,6 +1,6 @@
 package com.landon.url;
 
-import com.landon.entity.CourseEntity;
+import com.landon.factory.CourseType;
 
 public class YDTURLManager extends URLManager {
 
@@ -8,15 +8,15 @@ public class YDTURLManager extends URLManager {
 
 	private String HeaderURL = "http://wz.jxedt.com/test/abcd/ajax.asp?r=0.42186994873918593&index=";
 
-	private CourseEntity mCourseEntity;
+	private CourseType mCourseType;
 
-	public YDTURLManager(CourseEntity entity) {
-		mCourseEntity = entity;
+	public YDTURLManager(CourseType type) {
+		mCourseType = type;
 	}
 
 	@Override
 	public String getOriginURL() {
-		if (mCourseEntity.getCourseID() == CourseEntity.COURSE_1)
+		if (mCourseType.getTpyeCode() == CourseType.COURSE_1)
 			return OriginURL + "c";
 		else
 			return OriginURL + "s";

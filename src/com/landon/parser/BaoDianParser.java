@@ -18,18 +18,18 @@ import org.jsoup.select.Elements;
 import org.omg.CORBA.INTERNAL;
 
 import com.landon.entity.BaoDianEntity;
-import com.landon.entity.CourseEntity;
 import com.landon.entity.Entity;
 import com.landon.entity.PictureEntity;
 import com.landon.entity.VideoEntity;
+import com.landon.factory.CourseType;
 import com.landon.thread.GetMedia;
 
 public class BaoDianParser implements IParser {
 
-	private CourseEntity mCourseEntity;
+	private CourseType mCourseEntity;
 
-	public BaoDianParser(CourseEntity entity) {
-		mCourseEntity = entity;
+	public BaoDianParser(CourseType type) {
+		mCourseEntity = type;
 	}
 
 	/**

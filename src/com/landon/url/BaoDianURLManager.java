@@ -2,7 +2,7 @@ package com.landon.url;
 
 import java.util.List;
 
-import com.landon.entity.CourseEntity;
+import com.landon.factory.CourseType;
 
 public class BaoDianURLManager extends URLManager {
 
@@ -13,10 +13,10 @@ public class BaoDianURLManager extends URLManager {
 	// url不变的尾部
 	private String tailURL = "&_=";
 
-	private CourseEntity mCourseEntity;
+	private CourseType mCourseType;
 
-	public BaoDianURLManager(CourseEntity entity) {
-		mCourseEntity = entity;
+	public BaoDianURLManager(CourseType type) {
+		mCourseType = type;
 	}
 
 	@Override
@@ -31,9 +31,9 @@ public class BaoDianURLManager extends URLManager {
 
 	@Override
 	public String getOriginURL() {
-		if (mCourseEntity.getCourseID() == CourseEntity.COURSE_1) {
+		if (mCourseType.getTpyeCode() == CourseType.COURSE_1) {
 			originURL += "1&_=";
-		} else if (mCourseEntity.getCourseID() == CourseEntity.COURSE_4) {
+		} else if (mCourseType.getTpyeCode() == CourseType.COURSE_4) {
 			originURL += "3&_=";
 		}
 		return originURL + System.currentTimeMillis();

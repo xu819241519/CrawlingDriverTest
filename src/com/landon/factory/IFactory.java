@@ -1,6 +1,5 @@
 package com.landon.factory;
 
-import com.landon.entity.CourseEntity;
 import com.landon.parser.IParser;
 import com.landon.url.URLManager;
 
